@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form class="form" align="center" action="/register" method="post" id="form">
+      <div class="form-group">
+        <input id="username" autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"
+        oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="this.setCustomValidity('')" required>
+      </div>
+      <div class="form-group">
+        <input id="password" class="form-control" name="password" placeholder="Password" type="password"
+        oninvalid="this.setCustomValidity('Enter Password Here')" oninput="this.setCustomValidity('')" required>
+      </div>
+      <div class="form-group">
+        <input id="confirmation" class="form-control" name="confirmation" placeholder="Re-Enter Password" type="password"
+        oninvalid="this.setCustomValidity('Re-Enter Password here')" oninput="this.setCustomValidity('')" required>
+      </div>
+      <button id="submit" class="btn btn-outline-danger" type="submit">Register</button>
+    </form>
+    <script>
+        document.getElementById("form").onsubmit = function(event) {
+            var pass = document.getElementById("password").value;
+            var conf = document.getElementById("confirmation").value;
+
+            if (pass != conf) {
+                event.preventDefault();
+                alert("Sorry, you didn't re-enter the correct password");
+                return false;
+            }
+            else
+            {
+                document.getElementById("form").submit();
+            }
+        };
+    </script>
+
+<!--
+    <form class="form" align = "center" action="/register" method="post" id = "form">
+        <div class="form-group">
+            <input id = "username" autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"
+            oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="this.setCustomValidity('')" required>
+        </div>
+        <div class="form-group">
+            <input id = "password" class="form-control" name="password" placeholder="Password" type="password"
+            oninvalid="this.setCustomValidity('Enter Password Here')" oninput="this.setCustomValidity('')" required>
+        </div>
+        <div class="form-group">
+            <input id = "confirmation" class="form-control" name="confirmation" placeholder="Re-Enter Password" type="password"
+            oninvalid="this.setCustomValidity('Re-Enter Password here')" oninput="this.setCustomValidity('')" required>
+        </div>
+        <button id = "submit" class="btn btn-outline-danger" type="submit">Register</button>
+    </form>
+    <script>
+        var pass = document.getElementById("password").value;
+        var conf = document.getElementById("confirmation").value;
+
+        console.log("password logs: ");
+        console.log(pass);
+        console.log(conf);
+        document.getElementById("form").onsubmit = function check(){
+            if (pass != conf){
+                alert("Password Error");
+            }
+         };
+    </script>-->
+{% endblock %}

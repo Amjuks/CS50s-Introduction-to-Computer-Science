@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ poke['name'] }}
+{% endblock %}
+
+{% block main %}
+<br><br>
+<div style="color: {{ color[poke['type'].split("|")[0]] }};" class="pokemon">
+    <div class = "pokemon-stats">
+        <div class="pokemon">
+            <div class="overline">
+            <span>
+                <h1>{{ poke['name'] }}</h1>
+            </span>
+            </div>
+            <div class="underline">
+            <span>
+                <h1>#{{ poke['id'] }}</h1>
+            </span>
+            </div>
+            <img style="height: 300px; width: 300px;" src = {{ poke['url'] }} alt = {{ poke['name'] }}>
+        </div>
+
+        <div class="pokemon">
+            <h2 class="underline">
+                <span>
+                    TYPES
+                </span>
+            </h2>
+            <div>
+                <form action="/type" method ="post">
+                    {% for type in poke['type'].split("|") %}
+                    <button name = "type|{{ type }}"class="btn btn-warning">{{ type }}</button>
+                    {% endfor %}
+                </form>
+            </div>
+            <br><br>
+            <h2 class="underline">
+                <span>
+                    <b>STATS</b>
+                </span>
+            </h2>
+            <div class="pokemon-info pokemon">
+                <div>
+                    <button class="btn btn-outline-warning active">Attack: {{ poke['atk'] }}</button>
+                    <button class="btn btn-outline-warning active">Special-Attack: {{ poke['sp_atk'] }}</button>
+                    <br>
+
+                    <button class="btn btn-outline-warning active">Defense: {{ poke['def'] }}</button>
+                    <button class="btn btn-outline-warning active">Special-Defense: {{ poke['sp_def'] }}</button>
+                    <br>
+
+                    <button class="btn btn-outline-warning active">Hitpoints: {{ poke['hp'] }}</button>
+                    <button class="btn btn-outline-warning active">Speed: {{ poke['spd'] }}</button>
+                    <br>
+
+                    <button class="btn btn-outline-warning active">Weight: {{ poke['weight'] }}</button>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <h3 class="underline">
+        <span>
+            <b>ABILITIES</b>
+        </span>
+    </h3>
+    <br>
+    <div class="pokemon-info">
+        <form action = "/ability" method = "post">
+        {% for ability in poke['ability'].split("|") %}
+            &nbsp<button name="ability|{{ ability }}" class="btn btn-warning">{{ ability }}</button>&nbsp
+        {% endfor %}
+        </form>
+    </div>
+
+    <br><br>
+
+    <h3 class="underline">
+        <span>
+            <b>MOVES</b>
+        </span>
+    </h3>
+    <br>
+    <div class="pokemon-info">
+        <form action = "/moves" method = "post">
+        {% for move in poke['moves'].split("|") %}
+            &nbsp<button name="move|{{ move }}" class="btn btn-warning">{{ move }}</button>&nbsp
+        {% endfor %}
+        </form>
+    </div>
+</div>
+{% endblock %}

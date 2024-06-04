@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>
+        Pokedex: {% block title %}{% endblock %}
+        </title>
+
+        <!--Bootstrap stylesheet-->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <!--Font Awesome stylesheet for icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <!--
+        fa fa-star-o -> star with outline
+        fa fa-star   -> solid star
+        -->
+        <!--My own stylesheet as a personal touch-->
+        <link href = "static/style.css" rel="stylesheet">
+
+        <link rel="icon" type="image/ico" href="https://www.zamzar.com/download.php?uid=8bda98545ab976c769bee6c915dcfa-c492178e2fed977&targetId=pmVo4ovEokn3e0OeWCcFSQ_I_I&fileID=pokemon-symbol-logo-31.ico">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href = "/">
+                <img style="width: 110px; height: 38px;" src="https://www.freepnglogos.com/uploads/gotta-catch-em-all-transparent-pokemon-logo-11.png" alt="PokeLogo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbar">
+                {% if session.user_id %}
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/type">Type</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/moves">Moves</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/ability">Ability</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/favourite">Favourite</a></li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </nav>
+
+        <main class="container">
+            {% block main %}{% endblock %}
+        </main>
+
+        <br>
+        <footer class="small text-center text-muted">
+            Data provided for free by <a href="https://pokeapi.co">pokeapi</a>.
+        </footer>
+        <br><br>
+    </body>
+</html>

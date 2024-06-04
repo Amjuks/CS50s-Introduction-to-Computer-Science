@@ -1,0 +1,123 @@
+body
+{
+    background-color: black;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+.form
+{
+    padding-top: 70px;
+}
+
+.pokes
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.poke-info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px 35px;
+}
+
+.poke-info img
+{
+    outline-style: solid;
+    font-size: 25px;
+    transition: transform .4s;
+    background-color: #343A3E;
+    width: 300px;
+    height: 300px;
+}
+
+.poke-info img:hover
+{
+    transform: scale(1.1);
+}
+
+.pokemon
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 i
+{
+    color: yellow;
+}
+
+.star-add:hover i:before
+{
+    content:"\f005";
+}
+
+.star-rm:hover i:before
+{
+    content:"\f006";
+}
+
+.pokemon-names
+{
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 6px 15px;
+}
+
+.pokemon-info, .pokemon-info form
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokemon-info button
+{
+    margin-top: 10px;
+}
+
+.pokemon-stats
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.underline span {
+  display: inline-block;
+}
+
+.underline span::after
+{
+  content: '';
+  height: 7px;
+  background: grey;
+  border-radius: 10px;
+  display: block
+}
+
+.overline span::before
+{
+  content: '';
+  height: 7px;
+  background: grey;
+  border-radius: 10px;
+  display: block
+}

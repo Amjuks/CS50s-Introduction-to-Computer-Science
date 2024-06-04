@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log in
+{% endblock %}
+
+{% block main %}
+    <form class="form" align = "center" action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"
+            oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="this.setCustomValidity('')" required>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"
+            oninvalid="this.setCustomValidity('Enter Password Here')" oninput="this.setCustomValidity('')" required>
+        </div><!--
+        <a href = "/changepassword">
+            <small id="passwordHelpBlock" class="form-text">
+                Change Password
+            </small>
+        </a>
+        <br>-->
+        <button class="btn btn-outline-danger" type="submit">Log In</button>
+    </form>
+{% endblock %}

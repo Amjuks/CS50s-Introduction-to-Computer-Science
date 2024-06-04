@@ -1,0 +1,217 @@
+.custom-navbar
+{
+    font-size: 150%;
+    position: fixed;
+    width: 100%;
+}
+
+a
+{
+    color: white;
+}
+
+.custom-navbar a:hover{
+    color: white;
+    background-color: #0f445c;
+}
+
+H1
+{
+    background-color: #f5b505;
+    color: white;
+    text-align: center;
+    font-size: 500%;
+    padding-top: 50px;
+}
+
+.scratch
+{
+    margin-top: -10px;
+    float: left;
+    background-color: white;
+    width: 50%;
+    padding-bottom: 30px;
+}
+
+.scratch-img
+{
+    margin-top: -10px;
+    float: right;
+    padding-top: 78px;
+    padding-bottom: 77px;
+    background-color: white;
+    width: 50%;
+}
+
+.scratch-info
+{
+    color: white;
+    margin-top: 350px;
+    text-align: center;
+}
+
+.text
+{
+    padding-left: 100px;
+    padding-top: 30px;
+}
+
+.custom-table
+{
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body
+{
+    background-color: black;
+    margin-bottom: 50px;
+}
+
+.cs50-info
+{
+    margin-top: -10px;
+    float: left;
+    background-color: white;
+    width: 50%;
+    padding-bottom: 30px;
+}
+
+.cs50-img
+{
+    float: right;
+    background-color: white;
+    width: 50%;
+    margin-top: -10px;
+    padding-top: 119px;
+    padding-bottom: 119px;
+}
+
+.cs50-hello-info
+{
+    width: 50%;
+    float: right;
+    color: white;
+    padding-bottom: 114px;
+}
+
+.cs50-hello-input
+{
+    width: 50%;
+    float: left;
+    color: white;
+    padding-bottom: 60px;
+}
+
+.cs50-marioLess
+{
+    width: 50%;
+    float: left;
+    background-color: white;
+    color: black;
+    padding-bottom: 46px;
+}
+
+.cs50-marioLess-input
+{
+    width: 50%;
+    float: right;
+    background-color: white;
+    color: black;
+    padding-bottom: 0px;
+}
+
+.cs50-marioMore
+{
+    width: 50%;
+    float : right;
+    color: white;
+}
+
+.cs50-marioMore-input
+{
+    width: 50%;
+    float: left;
+    color: white;
+    font-family: Roboto Mono;
+}
+
+.insta-intro-text
+{
+    margin-top: -10px;
+    width: 50%;
+    float: left;
+    background-color: white;
+    padding-bottom: 30px;
+}
+
+.insta-intro-img
+{
+    width: 50%;
+    float: right;
+    background-color: white;
+    margin-top: -10px;
+    padding-left: 230px;
+    padding-top: 133px;
+    padding-bottom: 133px;
+}
+
+.custom-table a:hover
+{
+    color: #7f7e82;
+}
+
+.insta-how
+{
+    color: white;
+    width: 50%;
+    float: left;
+}
+
+.insta-img img
+{
+    width: 400px;
+    height: auto;
+}
+
+.insta-what
+{
+    background-color: white;
+    color: black;
+    width: 50%;
+    float: right;
+    padding-left: 120px;
+}
+
+.insta-started
+{
+    width: 50%;
+    float: right;
+    color: white;
+}
+
+.flex
+{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.reverse
+{
+    flex-direction:row-reverse;
+    background-color: white;
+}
+
+.Intro
+{
+    margin-top: -10px;
+    background-color: white;
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 30px;
+}

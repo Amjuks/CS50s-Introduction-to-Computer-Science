@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Homepage50 - CS50</title>
+    </head>
+    <body>
+        <div class = "custom-navbar">
+            <ul class="nav bg-dark">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Homepage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="scratch.html">Scratch</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cs50.html">CS50</a>
+                </li>
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "instagram.html">Instagram</a>
+                </li>
+            </ul>
+        </div>
+        <H1>CS50</H1>
+        <div class = "cs50-info text">
+            <H2>
+                My CS50 Story
+            </H2>
+            <p>
+                It was around June that I had joined this course. Everything<br>
+                I knew until then was just Scratch and common C syntax.<br>
+                I had my school so I had to manage my timefor this course.<br>
+                The first 2 weeks in this course helped me a bit to<br>
+                understand what programming was all about. After 2 months<br>
+                I was in week 5 and before I knew I had learnt C.
+            </p>
+            <p>
+                My first program was to print <i>Hello World!</i> and in the<br>
+                next 2 months I had learnt to filter images, spell check a<br>
+                text file and much more! The next day I had already learnt python<br>
+                and use it in the same way I was using C.
+            </p>
+            <p>
+                I was off for sometime after that since I had school. When I came<br>
+                back I had learnt SQL in a week and learnt to manage databases<br>
+                using it, which was pretty fun! The next day I watched a few<br>
+                lectures in the web track and here I am now!<br>
+                <br>
+                I have made a few programs here that do the same, have fun!
+            </p>
+        </div>
+
+        <div class = "cs50-img">
+            <a href = "https://cs50.harvard.edu/college/2020/fall/">
+            <img src = "cs50" alt = "CS50 Logo">
+            </a>
+        </div>
+
+        <div class = "cs50-hello">
+            <div class = "cs50-hello-info text">
+                <H2>Hello world!</H2>
+                <p>
+                    <H4>Enter your name and press done!</H4>
+                </p>
+            </div>
+
+            <div class = "cs50-hello-input text">
+                <form onclick = "hello(); return false;">
+                    <input type = "text" placeholder = "Enter your name!" id = "hello-name"><br><br>
+                    <input class = "btn btn-outline-light" type = "submit" value = "Done" id = "hello-submit">
+                </form>
+
+                <p>
+                    <H5 id = "hello">Hello, World!</H5>
+                </p>
+            </div>
+        </div>
+
+        <div class = "cs50-marioLess text">
+            <H2>
+                Mario Less
+            </H2>
+            <p>
+                <H4>Enter a number between 1 and 10 and press done!</H4>
+                <H5><br><br><br>Prints a right-angled triangle<br><br><br><br><br><br></H5>
+            </p>
+        </div>
+        <div class = "cs50-marioLess-input text">
+                <form onclick = "marioLess(); return false;">
+                    <input type = "text" placeholder = "Enter a number!" id = "marioLess-height"><br><br>
+                    <input class = "btn btn-outline-dark" type = "submit" value = "Done">
+                </form>
+
+                <p>
+                    <H5 id = "cs50-marioLess-pyramid"><br><br><br><br><br><br><br><br><br><br></H5>
+                </p>
+        </div>
+
+        <div class = "cs50-marioMore text">
+            <H2>
+                Mario More
+            </H2>
+            <p>
+                <H4>Enter a number between 1 and 10 and press done!</H4>
+                <H5><br><br><br><br>Prints a pyramid<br><br><br><br><br></H5>
+            </p>
+        </div>
+        <div class = "cs50-marioMore-input text">
+                <form onclick = "marioMore(); return false;">
+                    <input type = "text" placeholder = "Enter a number!" id = "marioMore-height"><br><br>
+                    <input class = "btn btn-outline-light" type = "submit" value = "Done">
+                </form>
+
+                <p>
+                    <H5 id = "cs50-marioMore-pyramid"><br><br><br><br><br><br><br><br><br><br></H5>
+                </p>
+        </div>
+    </body>
+    <script>
+        function hello(){
+            let name = document.querySelector('#hello-name').value
+
+            if(name === "")
+            {
+                document.querySelector("#hello").innerHTML = "Hello, World!";
+            }
+            else
+            {
+                document.querySelector("#hello").innerHTML = "Hello, " + name + "!";
+            }
+        }
+
+        function marioLess(){
+
+            var nr, s, h, i, j;
+            nr = document.querySelector('#marioLess-height').value;
+
+            if (nr > 0 || nr < 11 && Number.isInteger(nr))
+            {
+                let pyramid = "";
+
+                for (i = 1; i <= nr; i++)
+                {
+                    for (j = 1; j <= s; j++)
+                    {
+                        pyramid = pyramid + "&nbsp";
+                    }
+                    s--;
+                    for (h = 0; h < i; h++)
+                    {
+                        pyramid = pyramid + "#";
+                    }
+                    pyramid = pyramid + "<br>";
+                }
+
+                for (i = 10 - nr; i > 0; i--)
+                {
+                    pyramid = pyramid + "<br>";
+                }
+            document.querySelector("#cs50-marioLess-pyramid").innerHTML = pyramid;
+            }
+            else
+            {
+                pyramid = "Enter a number between 1 and 10";
+                for (i = 10; i > 0; i--)
+                {
+                    pyramid = pyramid + "<br>";
+                }
+            document.querySelector("#cs50-marioLess-pyramid").innerHTML = pyramid;
+            }
+        }
+
+        function marioMore(){
+
+            let nr = document.querySelector('#marioMore-height').value;
+            let pyramid = "";
+
+            if (nr > 0 || nr < 11 && Number.isInteger(nr))
+            {
+                var s, j, i, h;
+                s = nr - 1;
+
+                for (i = 1; i <= nr; i++)
+                {
+                    for (j = 1; j <= s; j++)
+                    {
+                        pyramid = pyramid + "&nbsp&nbsp";
+                    }
+
+                    s--;
+
+                    for (h = 0; h < i; h++)
+                    {
+                        pyramid = pyramid + "#";
+                    }
+
+                    pyramid = pyramid + "&nbsp&nbsp";
+
+                    for (h = 0; h < i; h++)
+                    {
+                        pyramid = pyramid + "#";
+                    }
+
+                    pyramid = pyramid + "<br>";
+                }
+            }
+            else
+            {
+                pyramid = "Enter a number between 1 and 10";
+                for (i = 10; i > 0; i--)
+                {
+                    pyramid = pyramid + "<br>";
+                }
+            }
+                document.querySelector("#cs50-marioMore-pyramid").innerHTML = pyramid;
+        }
+    </script>
+</html>

@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ search[0] }}
+{% endblock %}
+
+{% block main %}
+    <form align = "center" class = "form" action = {{ search[1] }} method = "post">
+            <input name = "input" placeholder = "{{ search[2] }}"
+            oninvalid="this.setCustomValidity('{{ search[2] }}')" oninput="this.setCustomValidity('')" required>
+            <button name = "search" class="btn btn-outline-success" type="button">Search</button>
+    </form>
+
+    {% if pokes == [] %}
+    {% else %}
+        <div class = "pokes">
+        {% for poke in pokes[offset:offset+12] %}
+            <div style = "color: {{ color[poke['type'].split()[0] ] }}" class="poke-info">
+                <a href = "/pokemon?id={{ poke['id'] }}">
+                    <img style="outline-color: {{ color[poke['type'].split()[0]] }};" src={{ poke['url'] }} alt = {{ poke['name'] }}>
+                </a>
+                <div style="text-align: center;">
+                    <br>
+                    <h2>
+                    <form action={{ search[1] }} method="post">
+                        {% if poke['id'] in fav %}
+                            <button name = "fav-rm" value = {{ poke['id'] }} style="font-size: 100%;" class="btn btn-dark star-rm">
+                                    <i class = "fa fa-star"></i>
+                            </button>
+                        {% else %}
+                            <button name = "fav-add" value = {{ poke['id'] }} style="font-size: 100%;" class="btn btn-dark star-add">
+                                    <i class = "fa fa-star-o"></i>
+                            </button>
+                        {% endif %}
+                    </form>
+                    #{{ poke['id'] }}<br>
+                    {{ poke['name'] }}<br>
+                    {{ poke['type'] }}
+                    </h2>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if not pokes[offset:offset+12] == [] %}
+        <form action = {{ search[1] }} method = "post">
+            <div class="buttons">
+                <button name = "previous" class = "btn btn-outline-warning">Previous</button>
+                <button name = "next" class = "btn btn-outline-warning">Next</button>
+            </div>
+        </form>
+    {% endif %}
+{% endblock %}
