@@ -34,7 +34,7 @@ I successfully completed the CS50x 2020 course and obtained a certificate of com
     Create an interactive game, animation, or story using Scratch, a visual programming language.  
     [Demo](https://scratch.mit.edu/projects/239258290) | [Code](Week%200%20-%20Scratch/Scratch/Race%20With%20Your%20Car!!.sb3)
 
-    <iframe src="https://scratch.mit.edu/projects/239258290/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+   <img src="https://github.com/Amjuks/CS50s-Introduction-to-Computer-Science/assets/59416451/cade6022-7c09-44e4-9548-39032f4b7979" alt="scratch_image" width="700px">
 
 ### Week 1: Introduction to C
 
@@ -164,7 +164,7 @@ I successfully completed the CS50x 2020 course and obtained a certificate of com
     Web-based application using Javascript, Python, and SQL.  
     [Demo](https://youtu.be/19_u2v3y2vk?si=1z-F-FfpRgtDD2F4) | [Code](Week%209%20-%20Final%20Project/)
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/19_u2v3y2vk?si=iad9cTHmrkiYLfZd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    [![Watch the video](https://img.youtube.com/vi/19_u2v3y2vk/0.jpg)](https://www.youtube.com/watch?v=19_u2v3y2vk)
 
 ## Getting Started
 
